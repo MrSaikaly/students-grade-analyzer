@@ -4,6 +4,17 @@
 #3- Prints the highest grade earned (Student name and grade)
 #4- Prints the count of students who passed (grade >= 60)
 
+
+
+#fucntions to be used in the software
+def display_student_summary(student_list):
+    print("we will work on following Students:_ ")
+    for index,student in enumerate(student_list):
+        print(  index+1 , "Student with grade :- ", student )
+
+
+#  
+
 #Informing the user about the Software 
 print("This Software will read Students Names and Grades and helps you calculating the following:\n1-Class Average \n2-Highest Grade\n3-Count of students who passed")
 
@@ -47,4 +58,4 @@ for i in range(student_count): # looping on number of students
     students_list.append(student)#adding student data to collection
 
 #now printing student name and its grade
-print("we will work on followinf Students:_ " , students_list)
+display_student_summary(students_list)
