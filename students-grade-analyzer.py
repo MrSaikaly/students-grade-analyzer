@@ -10,7 +10,7 @@
 def display_student_summary(student_list):# display student summary fucntion 
     print("we will work on following Students:_ ")
     for index,student in enumerate(student_list):
-        print(  index+1 , "Student:_"+ student[0]+ " with grade :_", student[1] )
+        print(index+1 , "Student:_"+ student[0]+ " with grade :_", student[1] )
 
 def get_avg_grade(student_list):# Calculate student average fucntion 
         sum=0
@@ -20,19 +20,26 @@ def get_avg_grade(student_list):# Calculate student average fucntion
          
 def get_heighest_grade(student_list): # Get highest grade
     highest_grade=0
+    highest_grade_students=[]
+    #looping to get highest grade
     for index,student in enumerate(student_list):
         if student[1]> highest_grade:
             highest_grade=student[1]
-    return highest_grade
+    print("Student who got the highest grade are:")
+
+    for index,student in enumerate(student_list):
+        if student[1]== highest_grade:
+            print("\t Student:_ ", student[0], "with grade:_", student[1])
+
+def count_passed(student_list):# count student passwd
+    count_passed=0
+    for index,student in enumerate(student_list):
+        if student[1]>=60:
+            count_passed += 1
+    return count_passed
 
 
-
-
-
-
-
-
-#  
+# starting the code 
 
 #Informing the user about the Software 
 print("This Software will read Students Names and Grades and helps you calculating the following:\n1-Class Average \n2-Highest Grade\n3-Count of students who passed")
@@ -77,7 +84,8 @@ for i in range(student_count): # looping on number of students
     students_list.append(student)#adding student data to collection
 
 #now printing student name and its grade
-display_student_summary(students_list)
-print("your class Average grade is:_ ",get_avg_grade(students_list))
-print("your class Highest Grade is:_ ",get_heighest_grade(students_list))
+display_student_summary(students_list)  #display students and grades
+print("your class Average grade is:_ ",get_avg_grade(students_list)) #printing the average grade
+print("Total number of student who passed is:_ ",count_passed(students_list)) # printing total count of student who passed greated than 6
+get_heighest_grade(students_list) #printing student list who got the highest grade
 
