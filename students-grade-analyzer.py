@@ -13,9 +13,38 @@ print("This Software will read Students Names and Grades and helps you calculati
 #sorry for using advanced code
 while True:
     try: 
-        student_count=int(input("Please Enter the number of students:_ "))
+        student_count=-1
+        while student_count <=0: #checking that number of students greater than zero
+            student_count=int(input("Please Enter positive number of students:_ "))
         break
+#throwing an error excption if value of input not integer
     except ValueError:
         print('You entered a non integer value, try again.')
         continue
-print("we will now work on - " + str(student_count)  + " - Student grades")
+print("we will now work on - " + str(student_count)  + " - Student grades") # informing the user of number of students that he will work on
+
+# now taking Student name and grades from user
+students_list=[]
+for i in range(student_count): # looping on number of students
+    #student name
+    print("you are now working on student " +str(i+1) + " of total " + str(student_count))
+    student_name= input("Please enter Student Name:")
+
+    #student grade must be float - making
+    while True:
+        try: #checking student grade to be float and between 0 and 100
+            student_grade=-1
+            while student_grade <=0 or student_grade>100 :
+                student_grade=float(input("Please Enter student grade between 0 and 100:_ "))              
+            break
+#throwing excption if non numeric value entered
+        except ValueError:
+            print('You entered a non numeric value, try again.')
+            continue
+        
+#appending student to student list
+    student=[student_name, student_grade] #making name and grade to student
+    students_list.append(student)#adding student data to collection
+
+#now printing student name and its grade
+print("we will work on followinf Students:_ " , students_list)
