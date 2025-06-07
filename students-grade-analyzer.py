@@ -18,6 +18,14 @@ def get_avg_grade(student_list):# Calculate student average fucntion
             sum= sum + student[1]
         return sum / len(student_list)
          
+def get_heighest_grade(student_list): # Get highest grade
+    highest_grade=0
+    for index,student in enumerate(student_list):
+        if student[1]> highest_grade:
+            highest_grade=student[1]
+    return highest_grade
+
+
 
 
 
@@ -71,3 +79,5 @@ for i in range(student_count): # looping on number of students
 #now printing student name and its grade
 display_student_summary(students_list)
 print("your class Average grade is:_ ",get_avg_grade(students_list))
+print("your class Highest Grade is:_ ",get_heighest_grade(students_list))
+
