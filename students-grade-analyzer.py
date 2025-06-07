@@ -7,10 +7,21 @@
 
 
 #fucntions to be used in the software
-def display_student_summary(student_list):
+def display_student_summary(student_list):# display student summary fucntion 
     print("we will work on following Students:_ ")
     for index,student in enumerate(student_list):
-        print(  index+1 , "Student with grade :- ", student )
+        print(  index+1 , "Student:_"+ student[0]+ " with grade :_", student[1] )
+
+def get_avg_grade(student_list):# Calculate student average fucntion 
+        sum=0
+        for index,student in enumerate(student_list):
+            sum= sum + student[1]
+        return sum / len(student_list)
+         
+
+
+
+
 
 
 #  
@@ -59,3 +70,4 @@ for i in range(student_count): # looping on number of students
 
 #now printing student name and its grade
 display_student_summary(students_list)
+print("your class Average grade is:_ ",get_avg_grade(students_list))
